@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio-web",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8724"],
+      "cwd": "build/web",
+      "port": 8724
+    }
+  ]
+}

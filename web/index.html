@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Abanoub Michael — Software Development Engineer. 5+ years building scalable Flutter & iOS apps.">
+
+  <!-- Open Graph / social link previews. Update og:url with the deployed domain. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abanoub Michael — Software Development Engineer">
+  <meta property="og:description" content="5+ years building scalable Flutter & iOS apps. Clean architecture, team leadership, 30+ production apps.">
+  <meta property="og:image" content="social-preview.png">
+  <meta property="og:url" content="https://abanoub.dev/">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Abanoub Michael — Software Development Engineer">
+  <meta name="twitter:description" content="5+ years building scalable Flutter & iOS apps. Clean architecture, team leadership, 30+ production apps.">
+  <meta name="twitter:image" content="social-preview.png">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Abanoub Michael">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Abanoub Michael — Software Development Engineer</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #0D0D0D;
+    }
+    #loading {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #0D0D0D;
+      z-index: 9999;
+    }
+    #loading .spinner {
+      width: 44px;
+      height: 44px;
+      border: 3px solid rgba(255, 92, 53, 0.2);
+      border-top-color: #FF5C35;
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body style="background-color:#0D0D0D">
+  <div id="loading"><div class="spinner"></div></div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var el = document.getElementById('loading');
+      if (el) el.remove();
+    });
+  </script>
+  <!--
+    You can customize the "flutter_bootstrap.js" script.
+    This is useful to provide a custom configuration to the Flutter loader
+    or to give the user feedback during the initialization process.
+
+    For more details:
+    * https://docs.flutter.dev/platform-integration/web/initialization
+  -->
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
