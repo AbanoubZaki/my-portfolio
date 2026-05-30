@@ -30,7 +30,7 @@ class _HeroSectionState extends State<HeroSection>
   late final AnimationController _spin = AnimationController(
     vsync: this,
     duration: const Duration(seconds: 12),
-  )..repeat();
+  );
 
   @override
   void dispose() {
@@ -42,6 +42,14 @@ class _HeroSectionState extends State<HeroSection>
   Widget build(BuildContext context) {
     final isDesktop = Responsive.isDesktop(context);
     final isMobile = Responsive.isMobile(context);
+
+    // The animated, blur-heavy hero visual tanks mobile Safari/WebKit. Run the
+    // continuous spin loop only on desktop; mobile/tablet get a static visual.
+    if (isDesktop) {
+      if (!_spin.isAnimating) _spin.repeat();
+    } else if (_spin.isAnimating) {
+      _spin.stop();
+    }
 
     return Container(
       width: double.infinity,
@@ -102,7 +110,8 @@ class _HeroSectionState extends State<HeroSection>
                           Expanded(
                             flex: 5,
                             child: Center(
-                              child: HeroVisual(controller: _spin, size: 400),
+                              child: HeroVisual(
+                                  controller: _spin, size: 400, lite: false),
                             ),
                           ),
                         ],
@@ -112,7 +121,8 @@ class _HeroSectionState extends State<HeroSection>
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Center(
-                            child: HeroVisual(controller: _spin, size: 260),
+                            child: HeroVisual(
+                                controller: _spin, size: 260, lite: true),
                           ),
                           const SizedBox(height: 44),
                           _HeroText(widget: widget),
@@ -319,10 +329,19 @@ class _Stat extends StatelessWidget {
 /// circle. The blobs drift on their own and also follow the cursor; a gentle
 /// idle float keeps it alive.
 class HeroVisual extends StatefulWidget {
-  const HeroVisual({super.key, required this.controller, this.size = 400});
+  const HeroVisual({
+    super.key,
+    required this.controller,
+    this.size = 400,
+    this.lite = false,
+  });
 
   final AnimationController controller;
   final double size;
+
+  /// When true (mobile/tablet), drop the per-frame blur loop + BackdropFilter
+  /// for a static gradient aura — WebKit can't composite the heavy version.
+  final bool lite;
 
   @override
   State<HeroVisual> createState() => _HeroVisualState();
@@ -345,6 +364,8 @@ class _HeroVisualState extends State<HeroVisual> {
     final glass = size * 0.72;
     final photo = glass * 0.84;
     final blob = size * 0.52;
+
+    if (widget.lite) return _liteVisual(size, glass, photo);
 
     final visual = MouseRegion(
       onHover: _onHover,
@@ -444,6 +465,67 @@ class _HeroVisualState extends State<HeroVisual> {
     return visual
         .animate(onPlay: (c) => c.repeat(reverse: true))
         .moveY(begin: -6, end: 6, duration: 3500.ms, curve: Curves.easeInOut);
+  }
+
+  // Static, GPU-cheap hero: radial-gradient aura (no blur, no repaint loop)
+  // behind the framed photo. No BackdropFilter — WebKit chokes on it.
+  Widget _liteVisual(double size, double glass, double photo) {
+    Widget aura(Color color, Alignment center) => DecoratedBox(
+          decoration: BoxDecoration(
+            gradient: RadialGradient(
+              center: center,
+              radius: 0.75,
+              colors: [color.withValues(alpha: 0.55), Colors.transparent],
+            ),
+          ),
+        );
+
+    return SizedBox(
+      width: size,
+      height: size,
+      child: ClipOval(
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            const Positioned.fill(child: ColoredBox(color: AppColors.bg)),
+            Positioned.fill(
+                child: aura(AppColors.purple, const Alignment(-0.45, -0.5))),
+            Positioned.fill(
+                child: aura(AppColors.teal, const Alignment(0.55, 0.55))),
+            Positioned.fill(
+                child: aura(AppColors.orange, const Alignment(0.15, 0.35))),
+            Container(
+              width: glass,
+              height: glass,
+              padding: const EdgeInsets.all(1.5),
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [AppColors.orange, AppColors.purple],
+                ),
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/images/profile.png',
+                  semanticLabel: 'Abanoub Michael',
+                  width: photo,
+                  height: photo,
+                  fit: BoxFit.cover,
+                  alignment: Alignment.topCenter,
+                  errorBuilder: (_, _, _) => SizedBox(
+                    width: photo,
+                    height: photo,
+                    child: Center(child: Text('AM', style: AppText.monogram(48))),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   Widget _blob(double d, Color color, Alignment align) => Align(

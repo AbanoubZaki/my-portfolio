@@ -132,6 +132,10 @@ class _RevealState extends State<Reveal> {
 
   @override
   Widget build(BuildContext context) {
+    // Skip the scroll-reveal animation on mobile/tablet — animating opacity +
+    // transform on shadow/gradient-heavy cards janks on WebKit. Show instantly.
+    if (!Responsive.isDesktop(context)) return widget.child;
+
     return VisibilityDetector(
       key: _key,
       onVisibilityChanged: (info) {
