@@ -115,7 +115,7 @@ class Reveal extends StatefulWidget {
     super.key,
     required this.child,
     this.delay = Duration.zero,
-    this.offsetY = 36,
+    this.offsetY = 22,
   });
 
   final Widget child;
@@ -146,11 +146,11 @@ class _RevealState extends State<Reveal> {
       child: _shown
           ? widget.child
               .animate()
-              .fadeIn(duration: 220.ms, delay: widget.delay, curve: Curves.easeOut)
+              .fadeIn(duration: 180.ms, delay: widget.delay, curve: Curves.easeOut)
               .slideY(
                 begin: widget.offsetY / 100,
                 end: 0,
-                duration: 260.ms,
+                duration: 200.ms,
                 delay: widget.delay,
                 curve: Curves.easeOutCubic,
               )
