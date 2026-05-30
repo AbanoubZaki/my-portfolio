@@ -76,7 +76,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
                   Expanded(
                     flex: 1,
                     child: Reveal(
-                      delay: const Duration(milliseconds: 60),
+                      delay: const Duration(milliseconds: 30),
                       child: ProjectCard(project: companion),
                     ),
                   ),
@@ -91,7 +91,7 @@ class _ProjectsSectionState extends State<ProjectsSection> {
             children: [
               for (var i = 0; i < visible.length; i++)
                 Reveal(
-                  delay: Duration(milliseconds: 60 * (i % columns)),
+                  delay: Duration(milliseconds: 30 * (i % columns)),
                   child: ProjectCard(project: visible[i]),
                 ),
             ],

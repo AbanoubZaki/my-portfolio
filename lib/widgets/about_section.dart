@@ -136,7 +136,7 @@ class AboutSection extends StatelessWidget {
           else ...[
             Reveal(child: left),
             const SizedBox(height: 40),
-            Reveal(delay: const Duration(milliseconds: 120), child: right),
+            Reveal(delay: const Duration(milliseconds: 60), child: right),
           ],
         ],
       ),

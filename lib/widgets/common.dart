@@ -142,11 +142,11 @@ class _RevealState extends State<Reveal> {
       child: _shown
           ? widget.child
               .animate()
-              .fadeIn(duration: 360.ms, delay: widget.delay, curve: Curves.easeOut)
+              .fadeIn(duration: 220.ms, delay: widget.delay, curve: Curves.easeOut)
               .slideY(
                 begin: widget.offsetY / 100,
                 end: 0,
-                duration: 420.ms,
+                duration: 260.ms,
                 delay: widget.delay,
                 curve: Curves.easeOutCubic,
               )

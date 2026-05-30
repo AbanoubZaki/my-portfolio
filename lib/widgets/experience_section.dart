@@ -36,7 +36,7 @@ class ExperienceSection extends StatelessWidget {
           const SizedBox(height: 48),
           for (var i = 0; i < n; i++)
             Reveal(
-              delay: Duration(milliseconds: 70 * i),
+              delay: Duration(milliseconds: 35 * i),
               child: _TimelineItem(
                 experience: kExperiences[i],
                 topColor: _railColor(i / (n - 1)),

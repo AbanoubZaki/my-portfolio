@@ -75,7 +75,7 @@ class SkillsSection extends StatelessWidget {
             children: [
               for (var i = 0; i < _categories.length; i++)
                 Reveal(
-                  delay: Duration(milliseconds: 80 * i),
+                  delay: Duration(milliseconds: 35 * i),
                   child: _SkillCard(category: _categories[i]),
                 ),
             ],
