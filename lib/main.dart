@@ -1,4 +1,5 @@
-import 'package:flutter/gestures.dart';
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:visibility_detector/visibility_detector.dart';
@@ -18,6 +19,11 @@ void main() {
   // Default is 500ms, which makes scroll-reveals fire noticeably late.
   VisibilityDetectorController.instance.updateInterval =
       const Duration(milliseconds: 80);
+
+  // Open in German for German-system visitors; English otherwise.
+  final systemLang = PlatformDispatcher.instance.locale.languageCode;
+  if (systemLang == 'de') appLocale.value = const Locale('de');
+
   runApp(const PortfolioApp());
 }
 
