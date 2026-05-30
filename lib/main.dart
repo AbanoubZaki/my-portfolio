@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 import 'l10n/l10n.dart';
 import 'theme/colors.dart';
@@ -13,7 +14,12 @@ import 'widgets/nav_bar.dart';
 import 'widgets/projects_section.dart';
 import 'widgets/skills_section.dart';
 
-void main() => runApp(const PortfolioApp());
+void main() {
+  // Default is 500ms, which makes scroll-reveals fire noticeably late.
+  VisibilityDetectorController.instance.updateInterval =
+      const Duration(milliseconds: 80);
+  runApp(const PortfolioApp());
+}
 
 class PortfolioApp extends StatelessWidget {
   const PortfolioApp({super.key});
