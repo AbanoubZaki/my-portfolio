@@ -11,6 +11,8 @@ const List<Experience> kExperiences = [
     location: L('Dubai, UAE', 'Dubai, VAE'),
     period: L('Jan 2022 – Present', 'Jan. 2022 – heute'),
     url: 'https://grwangroup.com/',
+    iconAsset: 'assets/images/gli_dark.png',
+    iconHeight: 56,
     bullets: [
       L(
         'Led a team of 10+ developers across concurrent Flutter projects, ensuring on-time, high-quality delivery.',
@@ -39,6 +41,7 @@ const List<Experience> kExperiences = [
     location: L('Dubai, UAE', 'Dubai, VAE'),
     period: L('Aug 2021 – Mar 2026', 'Aug. 2021 – März 2026'),
     url: 'https://www.blink22.com/',
+    iconAsset: 'assets/images/blink22_dark.png',
     bullets: [
       L(
         'Developed mobile applications using Flutter with Provider and Bloc state management.',
@@ -59,6 +62,31 @@ const List<Experience> kExperiences = [
     ],
   ),
   Experience(
+    company: 'Wellx AI',
+    role: L(
+      'Contract Software Development Engineer (Flutter)',
+      'Software Development Engineer auf Vertragsbasis (Flutter)',
+    ),
+    location: L('Dubai, UAE', 'Dubai, VAE'),
+    period: L('Jul 2025 – Sep 2025', 'Juli 2025 – Sep. 2025'),
+    url: 'https://wellxai.com/',
+    iconAsset: 'assets/images/wellx.png',
+    bullets: [
+      L(
+        'Worked on Wellx, an AI-powered health insurance app that turns coverage from reactive to proactive using behaviour and well-being data.',
+        'Mitarbeit an Wellx, einer KI-gestützten Krankenversicherungs-App, die Versicherung mithilfe von Verhaltens- und Wohlbefindensdaten von reaktiv zu proaktiv macht.',
+      ),
+      L(
+        'Built the emotion-tracking module.',
+        'Modul zur Emotionserfassung entwickelt.',
+      ),
+      L(
+        'Developed the tracked-emotions statistics screen.',
+        'Statistik-Bildschirm für erfasste Emotionen entwickelt.',
+      ),
+    ],
+  ),
+  Experience(
     company: 'Blink22',
     role: L(
       'Mobile Development Internship (iOS)',
@@ -67,6 +95,7 @@ const List<Experience> kExperiences = [
     location: L('Alexandria, Egypt', 'Alexandria, Ägypten'),
     period: L('Jul 2020 – Sep 2020', 'Juli 2020 – Sep. 2020'),
     url: 'https://www.blink22.com/',
+    iconAsset: 'assets/images/blink22_dark.png',
     bullets: [
       L(
         'Developed an ARKit image tracking application for product recognition.',
@@ -87,6 +116,7 @@ const List<Experience> kExperiences = [
     location: L('Alexandria, Egypt', 'Alexandria, Ägypten'),
     period: L('Jul 2019 – Sep 2019', 'Juli 2019 – Sep. 2019'),
     url: 'https://www.itspark-eg.com/',
+    iconAsset: 'assets/images/itspark_dark.png',
     bullets: [
       L(
         'Converted an online pharmacy app from native Android to Flutter cross-platform.',

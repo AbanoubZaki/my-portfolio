@@ -9,6 +9,8 @@ class Experience {
     required this.period,
     required this.bullets,
     this.url,
+    this.iconAsset,
+    this.iconHeight = 40,
   });
 
   final String company;
@@ -17,4 +19,9 @@ class Experience {
   final L period;
   final List<L> bullets;
   final String? url;
+  final String? iconAsset;
+
+  /// Rendered height of [iconAsset]; lets squarish logos match the visual
+  /// weight of wide wordmarks.
+  final double iconHeight;
 }

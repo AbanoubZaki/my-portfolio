@@ -362,7 +362,7 @@ const List<Project> kProjects = [
     type: L('Flutter · Personal Project', 'Flutter · Privatprojekt'),
     period: L('Nov 2025 – Jan 2026', 'Nov. 2025 – Jan. 2026'),
     accent: AppColors.memoPink,
-    imageAsset: 'assets/images/memo_icon_1.png',
+    imageAsset: 'assets/images/memo_icon.png',
     imageMode: ProjectImageMode.cover,
     description: L(
       'A fun memory card-matching game built with Flutter in free time. '

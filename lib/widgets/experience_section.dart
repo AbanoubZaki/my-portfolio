@@ -146,25 +146,26 @@ class _ExperienceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                if (e.iconAsset != null) ...[
+                  _CompanyIcon(asset: e.iconAsset!, height: e.iconHeight),
+                  const SizedBox(width: 12),
+                ],
                 Flexible(child: _CompanyName(name: e.company, url: e.url)),
                 const SizedBox(width: 12),
-                Padding(
-                  padding: const EdgeInsets.only(top: 2),
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
-                    decoration: BoxDecoration(
-                      color: AppColors.orange.withValues(alpha: 0.12),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: Text(
-                      e.period.of(context),
-                      style: TextStyle(
-                        fontSize: 12.5,
-                        fontWeight: FontWeight.w600,
-                        color: AppColors.orange,
-                      ),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                  decoration: BoxDecoration(
+                    color: AppColors.orange.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    e.period.of(context),
+                    style: TextStyle(
+                      fontSize: 12.5,
+                      fontWeight: FontWeight.w600,
+                      color: AppColors.orange,
                     ),
                   ),
                 ),
@@ -178,6 +179,26 @@ class _ExperienceCard extends StatelessWidget {
             for (final b in e.bullets) _Bullet(text: b.of(context)),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _CompanyIcon extends StatelessWidget {
+  const _CompanyIcon({required this.asset, required this.height});
+  final String asset;
+  final double height;
+
+  @override
+  Widget build(BuildContext context) {
+    return ConstrainedBox(
+      constraints: const BoxConstraints(maxWidth: 150),
+      child: Image.asset(
+        asset,
+        height: height,
+        fit: BoxFit.contain,
+        filterQuality: FilterQuality.high,
+        errorBuilder: (_, _, _) => const SizedBox.shrink(),
       ),
     );
   }

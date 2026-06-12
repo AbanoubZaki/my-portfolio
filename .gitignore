@@ -46,3 +46,6 @@ app.*.map.json
 
 # FVM Version Cache
 .fvm/
+
+# graphify knowledge-graph output
+graphify-out/
