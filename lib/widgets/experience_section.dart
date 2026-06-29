@@ -130,11 +130,12 @@ class _ExperienceCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final e = experience;
+    final isMobile = Responsive.isMobile(context);
     return Hoverable(
       scale: 1.01,
       builder: (context, hovered) => AnimatedContainer(
         duration: const Duration(milliseconds: 180),
-        padding: const EdgeInsets.all(24),
+        padding: EdgeInsets.all(isMobile ? 18 : 24),
         decoration: BoxDecoration(
           color: AppColors.bgCard,
           borderRadius: BorderRadius.circular(16),
@@ -145,32 +146,7 @@ class _ExperienceCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                if (e.iconAsset != null) ...[
-                  _CompanyIcon(asset: e.iconAsset!, height: e.iconHeight),
-                  const SizedBox(width: 12),
-                ],
-                Flexible(child: _CompanyName(name: e.company, url: e.url)),
-                const SizedBox(width: 12),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
-                  decoration: BoxDecoration(
-                    color: AppColors.orange.withValues(alpha: 0.12),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Text(
-                    e.period.of(context),
-                    style: TextStyle(
-                      fontSize: 12.5,
-                      fontWeight: FontWeight.w600,
-                      color: AppColors.orange,
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            _CardHeader(experience: e, isMobile: isMobile),
             const SizedBox(height: 6),
             Text(e.role.of(context), style: AppText.bodyStrong(15.5)),
             const SizedBox(height: 2),
@@ -178,6 +154,77 @@ class _ExperienceCard extends StatelessWidget {
             const SizedBox(height: 16),
             for (final b in e.bullets) _Bullet(text: b.of(context)),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class _CardHeader extends StatelessWidget {
+  const _CardHeader({required this.experience, required this.isMobile});
+  final Experience experience;
+  final bool isMobile;
+
+  @override
+  Widget build(BuildContext context) {
+    final e = experience;
+    final badge = _PeriodBadge(label: e.period.of(context));
+
+    // On narrow screens, give the company name its full width and drop the
+    // date badge to its own line so neither gets squeezed into a sliver.
+    if (isMobile) {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              if (e.iconAsset != null) ...[
+                _CompanyIcon(asset: e.iconAsset!, height: e.iconHeight),
+                const SizedBox(width: 12),
+              ],
+              Flexible(child: _CompanyName(name: e.company, url: e.url)),
+            ],
+          ),
+          const SizedBox(height: 10),
+          badge,
+        ],
+      );
+    }
+
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        if (e.iconAsset != null) ...[
+          _CompanyIcon(asset: e.iconAsset!, height: e.iconHeight),
+          const SizedBox(width: 12),
+        ],
+        Flexible(child: _CompanyName(name: e.company, url: e.url)),
+        const SizedBox(width: 12),
+        badge,
+      ],
+    );
+  }
+}
+
+class _PeriodBadge extends StatelessWidget {
+  const _PeriodBadge({required this.label});
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+      decoration: BoxDecoration(
+        color: AppColors.orange.withValues(alpha: 0.12),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontSize: 12.5,
+          fontWeight: FontWeight.w600,
+          color: AppColors.orange,
         ),
       ),
     );
