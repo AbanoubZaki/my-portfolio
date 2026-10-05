@@ -5,8 +5,8 @@ import '../theme/colors.dart';
 import '../theme/text_styles.dart';
 import 'common.dart';
 
-const String kGitHubUrl = 'https://github.com/abanoub4055';
-const String kLinkedInUrl = 'https://www.linkedin.com/in/abanoub-michael';
+const String kGitHubUrl = 'https://github.com/AbanoubZaki';
+const String kLinkedInUrl = 'https://www.linkedin.com/in/abanoub-michael-53b192164';
 const String kEmail = 'abanoub4055@gmail.com';
 const String kPhone = '+49 152 1453 5320';
 const String kPhoneTel = 'tel:+4915214535320';
@@ -50,8 +50,8 @@ class ContactSection extends StatelessWidget {
                 const SizedBox(height: 16),
                 Text(
                   context.tr(
-                    '📍 Kornwestheim, Baden-Württemberg, Germany · $kPhone',
-                    '📍 Kornwestheim, Baden-Württemberg, Deutschland · $kPhone',
+                    '📍 Baden-Württemberg, Germany · $kPhone',
+                    '📍 Baden-Württemberg, Deutschland · $kPhone',
                   ),
                   textAlign: TextAlign.center,
                   style: AppText.body(14.5),

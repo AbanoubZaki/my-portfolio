@@ -15,11 +15,11 @@ class AboutSection extends StatelessWidget {
     final bio = [
       context.tr(
         "I'm a Software Development Engineer specializing in Flutter and native iOS "
-            "development, currently based in Kornwestheim, Germany. With over 5 years of "
+            "development, currently based in Baden-Württemberg, Germany. With over 5 years of "
             "hands-on experience, I've architected and shipped 30+ production "
             "applications used by real users across the globe.",
         'Ich bin Software Development Engineer mit Schwerpunkt auf Flutter und nativer '
-            'iOS-Entwicklung und lebe derzeit in Kornwestheim, Deutschland. Mit über 5 Jahren '
+            'iOS-Entwicklung und lebe derzeit in Baden-Württemberg, Deutschland. Mit über 5 Jahren '
             'praktischer Erfahrung habe ich mehr als 30 produktive Anwendungen konzipiert und '
             'veröffentlicht, die von echten Nutzern weltweit verwendet werden.',
       ),
@@ -95,15 +95,6 @@ class AboutSection extends StatelessWidget {
           body: context.tr(
             'Top 13 teams in the MENA region — semi-finals with the ResQ app.',
             'Top-13-Team der MENA-Region — Halbfinale mit der ResQ-App.',
-          ),
-        ),
-        const SizedBox(height: 14),
-        _Achievement(
-          emoji: '🎓',
-          title: context.tr('Vice Class Representative', 'Stellvertretender Klassensprecher'),
-          body: context.tr(
-            'Alexandria University Faculty of Engineering CSED, 2018–2019.',
-            'Universität Alexandria, Fakultät für Ingenieurwesen, CSED, 2018–2019.',
           ),
         ),
       ],

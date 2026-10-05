@@ -15,6 +15,7 @@ const List<_SkillCategory> _categories = [
   _SkillCategory(
       L('AI-Assisted Development', 'KI-gestützte Entwicklung'), AppColors.teal, [
     L('Claude Code', 'Claude Code'),
+    L('OpenAI Codex', 'OpenAI Codex'),
     L('AI Coding Agents', 'KI-Coding-Agenten'),
     L('AI Pair Programming', 'KI-Pair-Programming'),
     L('Prompt Engineering', 'Prompt Engineering'),
