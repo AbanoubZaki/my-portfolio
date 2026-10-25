@@ -7,6 +7,7 @@ import 'package:visibility_detector/visibility_detector.dart';
 import 'l10n/l10n.dart';
 import 'theme/colors.dart';
 import 'widgets/about_section.dart';
+import 'widgets/achievements_section.dart';
 import 'widgets/contact_section.dart';
 import 'widgets/experience_section.dart';
 import 'widgets/footer.dart';
@@ -124,6 +125,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                 KeyedSubtree(key: _keys['skills'], child: const SkillsSection()),
                 KeyedSubtree(key: _keys['experience'], child: const ExperienceSection()),
                 KeyedSubtree(key: _keys['projects'], child: const ProjectsSection()),
+                const AchievementsSection(),
                 KeyedSubtree(key: _keys['contact'], child: const ContactSection()),
                 const Footer(),
               ],

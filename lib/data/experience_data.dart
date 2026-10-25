@@ -1,26 +1,57 @@
 import '../l10n/l10n.dart';
 import '../models/experience.dart';
 
+/// Full years since the first full-time role (Blink22, Aug 2021).
+int get kYearsExperience {
+  final now = DateTime.now();
+  return now.year - 2021 - (now.month < 8 ? 1 : 0);
+}
+
 const List<Experience> kExperiences = [
+  Experience(
+    company: 'Blink22',
+    role: L(
+      'Full-time Software Development Engineer (Flutter & Native iOS)',
+      'Software Development Engineer in Vollzeit (Flutter & natives iOS)',
+    ),
+    location: L('Dubai, UAE', 'Dubai, VAE'),
+    period: L('Aug 2021 – Nov 2025', 'Aug. 2021 – Nov. 2025'),
+    url: 'https://www.blink22.com/',
+    iconAsset: 'assets/images/blink22_dark.png',
+    bullets: [
+      L(
+        'Developed Flutter apps with Provider and Bloc, and native iOS features in Swift and SwiftUI using MVVM, VIPER and clean architecture, including a UAE government app.',
+        'Entwicklung von Flutter-Apps mit Provider und Bloc sowie nativer iOS-Features in Swift und SwiftUI mit MVVM, VIPER und Clean Architecture, darunter eine App der VAE-Regierung.',
+      ),
+      L(
+        'Optimized performance across multiple Flutter and iOS projects.',
+        'Performance-Optimierung über mehrere Flutter- und iOS-Projekte hinweg.',
+      ),
+    ],
+  ),
   Experience(
     company: 'GLI Global Lean Industry 4.0',
     role: L(
-      'Software Development Team Leader (Flutter)',
-      'Teamleiter Softwareentwicklung (Flutter)',
+      'Part-time Software Development Team Leader (Flutter)',
+      'Software-Teamleiter in Teilzeit (Flutter)',
     ),
     location: L('Dubai, UAE', 'Dubai, VAE'),
-    period: L('Jan 2022 – Present', 'Jan. 2022 – heute'),
+    period: L('Jan 2022 – Nov 2025', 'Jan. 2022 – Nov. 2025'),
     url: 'https://grwangroup.com/',
     iconAsset: 'assets/images/gli_dark.png',
     iconHeight: 56,
     bullets: [
       L(
-        'Led a team of 10+ developers across concurrent Flutter projects, ensuring on-time, high-quality delivery.',
-        'Leitung eines Teams von über 10 Entwicklern in parallelen Flutter-Projekten mit termingerechter Lieferung in hoher Qualität.',
+        'Led a team of 10+ developers across concurrent Flutter projects.',
+        'Leitung eines Teams von über 10 Entwicklern in parallelen Flutter-Projekten.',
       ),
       L(
-        'Refactored legacy codebases of LeanGo Dashboard and LeanGo CIL applications.',
-        'Refactoring der Legacy-Codebasis der Anwendungen LeanGo Dashboard und LeanGo CIL.',
+        'Owned architecture and development workflows for the LeanGo platform: 10+ Industry 4.0 apps on Android, iOS and web.',
+        'Verantwortung für Architektur und Entwicklungsprozesse der LeanGo-Plattform: über 10 Industrie-4.0-Apps für Android, iOS und Web.',
+      ),
+      L(
+        'Refactored the legacy LeanGo Dashboard and LeanGo CIL codebases.',
+        'Refactoring der Legacy-Codebasis von LeanGo Dashboard und LeanGo CIL.',
       ),
       L(
         'Reduced infrastructure costs by 30% through efficient Firebase resource allocation.',
@@ -33,42 +64,13 @@ const List<Experience> kExperiences = [
     ],
   ),
   Experience(
-    company: 'Blink22',
-    role: L(
-      'Full-time Software Development Engineer (Flutter & Native iOS)',
-      'Software Development Engineer in Vollzeit (Flutter & natives iOS)',
-    ),
-    location: L('Dubai, UAE', 'Dubai, VAE'),
-    period: L('Aug 2021 – Mar 2026', 'Aug. 2021 – März 2026'),
-    url: 'https://www.blink22.com/',
-    iconAsset: 'assets/images/blink22_dark.png',
-    bullets: [
-      L(
-        'Developed mobile applications using Flutter with Provider and Bloc state management.',
-        'Entwicklung mobiler Anwendungen mit Flutter und State-Management über Provider und Bloc.',
-      ),
-      L(
-        'Applied Clean Architecture for scalable, maintainable app structure.',
-        'Einsatz von Clean Architecture für eine skalierbare und wartbare App-Struktur.',
-      ),
-      L(
-        'Optimized performance across multiple Flutter & iOS projects.',
-        'Performance-Optimierung über mehrere Flutter- und iOS-Projekte hinweg.',
-      ),
-      L(
-        'Collaborated with cross-functional teams to achieve project goals.',
-        'Zusammenarbeit mit interdisziplinären Teams zur Erreichung der Projektziele.',
-      ),
-    ],
-  ),
-  Experience(
     company: 'Wellx AI',
     role: L(
       'Contract Software Development Engineer (Flutter)',
       'Software Development Engineer auf Vertragsbasis (Flutter)',
     ),
     location: L('Dubai, UAE', 'Dubai, VAE'),
-    period: L('Jul 2025 – Sep 2025', 'Juli 2025 – Sep. 2025'),
+    period: L('Jul 2025 – Sep 2025 · Contract', 'Juli 2025 – Sep. 2025 · Vertrag'),
     url: 'https://wellxai.com/',
     iconAsset: 'assets/images/wellx.png',
     bullets: [
@@ -98,11 +100,11 @@ const List<Experience> kExperiences = [
     iconAsset: 'assets/images/blink22_dark.png',
     bullets: [
       L(
-        'Developed an ARKit image tracking application for product recognition.',
+        'Developed an ARKit image tracking app for product recognition.',
         'Entwicklung einer ARKit-Bilderkennungs-App zur Produkterkennung.',
       ),
       L(
-        'Contributed to iOS apps using Swift and VIPER Architecture.',
+        'Contributed to iOS apps using Swift and VIPER.',
         'Mitarbeit an iOS-Apps mit Swift und VIPER-Architektur.',
       ),
     ],
@@ -119,12 +121,12 @@ const List<Experience> kExperiences = [
     iconAsset: 'assets/images/itspark_dark.png',
     bullets: [
       L(
-        'Converted an online pharmacy app from native Android to Flutter cross-platform.',
-        'Migration einer Online-Apotheken-App von nativem Android zu plattformübergreifendem Flutter.',
+        'Converted an online pharmacy app from native Android to Flutter.',
+        'Migration einer Online-Apotheken-App von nativem Android zu Flutter.',
       ),
       L(
-        'Worked on a Flutter online market application for home ordering.',
-        'Mitarbeit an einer Flutter-Marktplatz-App für Bestellungen von zu Hause aus.',
+        'Worked on a Flutter online market app.',
+        'Mitarbeit an einer Flutter-Marktplatz-App.',
       ),
     ],
   ),

@@ -20,7 +20,6 @@ class AppColors {
   static const Color leangoGreen = Color(0xFF8BC23F);
   static const Color khatabookRed = Color(0xFFE5322C);
   static const Color salikSlate = Color(0xFF6A6FA0);
-  static const Color resqPurple = Color(0xFF7B57AB);
   static const Color memoPink = Color(0xFFE36AC8);
   static const Color saltTeal = Color(0xFF2E8B9E);
   static const Color muabBlue = Color(0xFF157CC0);

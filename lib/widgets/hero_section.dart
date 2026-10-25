@@ -5,6 +5,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
+import '../data/experience_data.dart' show kYearsExperience;
 import '../l10n/l10n.dart';
 import '../theme/colors.dart';
 import '../theme/text_styles.dart';
@@ -190,10 +191,10 @@ class _HeroText extends StatelessWidget {
             constraints: const BoxConstraints(maxWidth: 540),
             child: Text(
               context.tr(
-                '5+ years building scalable Flutter & iOS apps. Expert in clean '
+                '$kYearsExperience+ years building scalable Flutter & iOS apps. Expert in clean '
                     'architecture, cross-functional team leadership, and delivering '
                     'high-impact mobile solutions across 30+ production apps.',
-                'Seit über 5 Jahren entwickle ich skalierbare Flutter- und iOS-Apps. '
+                'Seit über $kYearsExperience Jahren entwickle ich skalierbare Flutter- und iOS-Apps. '
                     'Experte für Clean Architecture, interdisziplinäre Teamführung und '
                     'wirkungsvolle mobile Lösungen in über 30 produktiven Apps.',
               ),
@@ -286,7 +287,7 @@ class _StatsRow extends StatelessWidget {
       spacing: 40,
       runSpacing: 24,
       children: [
-        _Stat(value: '5+', label: context.tr('Years Experience', 'Jahre Erfahrung')),
+        _Stat(value: '$kYearsExperience+', label: context.tr('Years Experience', 'Jahre Erfahrung')),
         _Stat(value: '30+', label: context.tr('Production Apps', 'Produktive Apps')),
         _Stat(value: '10+', label: context.tr('Team Members Led', 'Geführte Teammitglieder')),
       ],

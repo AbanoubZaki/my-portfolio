@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../data/experience_data.dart' show kYearsExperience;
 import '../l10n/l10n.dart';
 import '../theme/colors.dart';
 import '../theme/text_styles.dart';
@@ -15,11 +16,11 @@ class AboutSection extends StatelessWidget {
     final bio = [
       context.tr(
         "I'm a Software Development Engineer specializing in Flutter and native iOS "
-            "development, currently based in Baden-Württemberg, Germany. With over 5 years of "
+            "development, currently based in Baden-Württemberg, Germany. With over $kYearsExperience years of "
             "hands-on experience, I've architected and shipped 30+ production "
             "applications used by real users across the globe.",
         'Ich bin Software Development Engineer mit Schwerpunkt auf Flutter und nativer '
-            'iOS-Entwicklung und lebe derzeit in Baden-Württemberg, Deutschland. Mit über 5 Jahren '
+            'iOS-Entwicklung und lebe derzeit in Baden-Württemberg, Deutschland. Mit über $kYearsExperience Jahren '
             'praktischer Erfahrung habe ich mehr als 30 produktive Anwendungen konzipiert und '
             'veröffentlicht, die von echten Nutzern weltweit verwendet werden.',
       ),
@@ -67,7 +68,7 @@ class AboutSection extends StatelessWidget {
             ),
             _LangPill(
               language: context.tr('German', 'Deutsch'),
-              level: context.tr('A1 Beginner', 'A1 (Grundkenntnisse)'),
+              level: context.tr('A2 Elementary', 'A2 (Grundkenntnisse)'),
               color: AppColors.purple,
             ),
           ],
@@ -79,24 +80,6 @@ class AboutSection extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const _EducationCard(),
-        const SizedBox(height: 20),
-        _Achievement(
-          emoji: '🥇',
-          title: context.tr('1st Place — IRI Hackathon 2019', '1. Platz — IRI Hackathon 2019'),
-          body: context.tr(
-            'Won first place across Egypt with the Haky Shoyyab app.',
-            'Erster Platz in ganz Ägypten mit der App Haky Shoyyab.',
-          ),
-        ),
-        const SizedBox(height: 14),
-        _Achievement(
-          emoji: '🌍',
-          title: 'Google DSC Solution Challenge 2020',
-          body: context.tr(
-            'Top 13 teams in the MENA region — semi-finals with the ResQ app.',
-            'Top-13-Team der MENA-Region — Halbfinale mit der ResQ-App.',
-          ),
-        ),
       ],
     );
 
@@ -213,48 +196,6 @@ class _EducationCard extends StatelessWidget {
               context.tr('Sep 2016 – Jun 2021 · Alexandria, Egypt',
                   'Sep. 2016 – Juni 2021 · Alexandria, Ägypten'),
               style: AppText.body(13.5),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _Achievement extends StatelessWidget {
-  const _Achievement({required this.emoji, required this.title, required this.body});
-  final String emoji;
-  final String title;
-  final String body;
-
-  @override
-  Widget build(BuildContext context) {
-    return Hoverable(
-      scale: 1.01,
-      builder: (context, hovered) => AnimatedContainer(
-        duration: const Duration(milliseconds: 180),
-        padding: const EdgeInsets.all(20),
-        decoration: BoxDecoration(
-          color: AppColors.bgCard,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(
-            color: hovered ? AppColors.borderStrong : AppColors.border,
-          ),
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(emoji, style: const TextStyle(fontSize: 26)),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(title, style: AppText.bodyStrong(16)),
-                  const SizedBox(height: 4),
-                  Text(body, style: AppText.body(14)),
-                ],
-              ),
             ),
           ],
         ),
