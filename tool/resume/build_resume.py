@@ -132,21 +132,21 @@ story = [
     *skill('Languages', 'Arabic (Native), English (Proficient, C1), German (Elementary, A2)'),
     Spacer(1, 2),
     *section('Experience'),
-    *entry('Blink22', 'Full-time Software Development Engineer (Flutter and native iOS)',
-           'Dubai, United Arab Emirates', '08/2021 - 11/2025', [
-               'Developed Flutter apps with Provider and Bloc, and native iOS features in Swift and '
-               'SwiftUI using MVVM, VIPER and clean architecture, including a UAE government app.',
-               'Optimized performance across multiple Flutter and iOS projects.',
-           ], BLINK22, 'Software Development Company'),
-    *entry('GLI Global Lean Industry 4.0', 'Part-time Software Development Team Leader (Flutter)',
-           'Dubai, United Arab Emirates', '01/2022 - 11/2025', [
-               'Led a team of 10+ developers across concurrent Flutter projects.',
-               'Owned architecture and development workflows for the LeanGo platform: 10+ Industry 4.0 '
+    *entry('GLI Global Lean Industry 4.0', 'Software Development Team Leader (Flutter)',
+           'Dubai, United Arab Emirates', '01/2022 - Present', [
+               'Lead a team of 10+ developers across concurrent Flutter projects.',
+               'Own architecture and development workflows for the LeanGo platform: 10+ Industry 4.0 '
                'apps on Android, iOS and web.',
                'Refactored the legacy LeanGo Dashboard and LeanGo CIL codebases.',
                'Reduced infrastructure costs by 30% through efficient Firebase resource allocation.',
                'Achieved a 75% bug reduction through continuous testing and feedback loops.',
            ], 'https://grwangroup.com/global-lean-industry-4-0/', 'Global Lean Industry'),
+    *entry('Blink22', 'Full-time Software Development Engineer (Flutter and native iOS)',
+           'Dubai, United Arab Emirates', '08/2021 - 03/2026', [
+               'Developed Flutter apps with Provider and Bloc, and native iOS features in Swift and '
+               'SwiftUI using MVVM, VIPER and clean architecture, including a UAE government app.',
+               'Optimized performance across multiple Flutter and iOS projects.',
+           ], BLINK22, 'Software Development Company'),
     *entry('Wellx AI', 'Contract Software Development Engineer (Flutter)',
            'Dubai, United Arab Emirates', 'Contract · 07/2025 - 09/2025', [
                'Worked on Wellx, an AI-powered health insurance app that uses behaviour and well-being '

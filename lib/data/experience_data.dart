@@ -9,44 +9,23 @@ int get kYearsExperience {
 
 const List<Experience> kExperiences = [
   Experience(
-    company: 'Blink22',
-    role: L(
-      'Full-time Software Development Engineer (Flutter & Native iOS)',
-      'Software Development Engineer in Vollzeit (Flutter & natives iOS)',
-    ),
-    location: L('Dubai, UAE', 'Dubai, VAE'),
-    period: L('Aug 2021 – Nov 2025', 'Aug. 2021 – Nov. 2025'),
-    url: 'https://www.blink22.com/',
-    iconAsset: 'assets/images/blink22_dark.png',
-    bullets: [
-      L(
-        'Developed Flutter apps with Provider and Bloc, and native iOS features in Swift and SwiftUI using MVVM, VIPER and clean architecture, including a UAE government app.',
-        'Entwicklung von Flutter-Apps mit Provider und Bloc sowie nativer iOS-Features in Swift und SwiftUI mit MVVM, VIPER und Clean Architecture, darunter eine App der VAE-Regierung.',
-      ),
-      L(
-        'Optimized performance across multiple Flutter and iOS projects.',
-        'Performance-Optimierung über mehrere Flutter- und iOS-Projekte hinweg.',
-      ),
-    ],
-  ),
-  Experience(
     company: 'GLI Global Lean Industry 4.0',
     role: L(
-      'Part-time Software Development Team Leader (Flutter)',
-      'Software-Teamleiter in Teilzeit (Flutter)',
+      'Software Development Team Leader (Flutter)',
+      'Software-Teamleiter (Flutter)',
     ),
     location: L('Dubai, UAE', 'Dubai, VAE'),
-    period: L('Jan 2022 – Nov 2025', 'Jan. 2022 – Nov. 2025'),
+    period: L('Jan 2022 – Present', 'Jan. 2022 – heute'),
     url: 'https://grwangroup.com/',
     iconAsset: 'assets/images/gli_dark.png',
     iconHeight: 56,
     bullets: [
       L(
-        'Led a team of 10+ developers across concurrent Flutter projects.',
+        'Lead a team of 10+ developers across concurrent Flutter projects.',
         'Leitung eines Teams von über 10 Entwicklern in parallelen Flutter-Projekten.',
       ),
       L(
-        'Owned architecture and development workflows for the LeanGo platform: 10+ Industry 4.0 apps on Android, iOS and web.',
+        'Own architecture and development workflows for the LeanGo platform: 10+ Industry 4.0 apps on Android, iOS and web.',
         'Verantwortung für Architektur und Entwicklungsprozesse der LeanGo-Plattform: über 10 Industrie-4.0-Apps für Android, iOS und Web.',
       ),
       L(
@@ -60,6 +39,27 @@ const List<Experience> kExperiences = [
       L(
         'Achieved a 75% bug reduction through continuous testing and feedback loops.',
         'Reduzierung der Fehler um 75 % durch kontinuierliches Testen und Feedback-Schleifen.',
+      ),
+    ],
+  ),
+  Experience(
+    company: 'Blink22',
+    role: L(
+      'Full-time Software Development Engineer (Flutter & Native iOS)',
+      'Software Development Engineer in Vollzeit (Flutter & natives iOS)',
+    ),
+    location: L('Dubai, UAE', 'Dubai, VAE'),
+    period: L('Aug 2021 – Mar 2026', 'Aug. 2021 – März 2026'),
+    url: 'https://www.blink22.com/',
+    iconAsset: 'assets/images/blink22_dark.png',
+    bullets: [
+      L(
+        'Developed Flutter apps with Provider and Bloc, and native iOS features in Swift and SwiftUI using MVVM, VIPER and clean architecture, including a UAE government app.',
+        'Entwicklung von Flutter-Apps mit Provider und Bloc sowie nativer iOS-Features in Swift und SwiftUI mit MVVM, VIPER und Clean Architecture, darunter eine App der VAE-Regierung.',
+      ),
+      L(
+        'Optimized performance across multiple Flutter and iOS projects.',
+        'Performance-Optimierung über mehrere Flutter- und iOS-Projekte hinweg.',
       ),
     ],
   ),
